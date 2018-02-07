@@ -263,6 +263,7 @@
     <Compile Include="CBAuth.cs" />
     <Compile Include="CBLoggers.cs" />
     <Compile Include="CBRedis.cs" />
+    <Compile Include="Controllers\DWMarketVersionCheckController.cs" />
     <Compile Include="Controllers\DWServerCheckController.cs" />
     <Compile Include="DataObjects\globalVal.cs" />
     <Compile Include="DataObjects\TodoItem.cs" />
@@ -271,6 +272,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DWMarketCheckData.cs" />
     <Compile Include="Models\DWServerCheckData.cs" />
     <Compile Include="Models\EncryptedData.cs" />
     <Compile Include="Models\MobileServiceContext.cs" />
