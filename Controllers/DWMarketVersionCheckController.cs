@@ -131,7 +131,7 @@ namespace CloudBread.Controllers
             }
             else
             {
-                result.checkState = (byte)APP_VERSION_CHECK_TYPE.SAME_TYPE;
+                result.checkState = (byte)APP_VERSION_CHECK_TYPE.DIFFERENT_TYPE;
             }
 
             return result;
