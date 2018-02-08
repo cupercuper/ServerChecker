@@ -101,7 +101,7 @@ namespace CloudBread.Controllers
         DWMarketCheckModel GetResult(DWMarketCheckInputParam p)
         {
             DWMarketCheckModel result = new DWMarketCheckModel();
-            result.errorCode = (byte)DW_ERROR_CODE.DB_ERROR;
+            result.errorCode = (byte)DW_ERROR_CODE.OK;
 
             RetryPolicy retryPolicy = new RetryPolicy<SqlAzureTransientErrorDetectionStrategy>(globalVal.conRetryCount, TimeSpan.FromSeconds(globalVal.conRetryFromSeconds));
             using (SqlConnection connection = new SqlConnection(globalVal.DBConnectionString))
@@ -114,6 +114,7 @@ namespace CloudBread.Controllers
                     {
                         if (dreader.HasRows == false)
                         {
+                            result.errorCode = (byte)DW_ERROR_CODE.DB_ERROR;
                             return result;
                         }
 
